@@ -1,0 +1,68 @@
+@import "../../../src/styles/variable.scss";
+.popup {
+  position: absolute;
+  top: calc(50% - 100px);
+  left: calc(50% - 325px);
+  z-index: 1010;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+  max-width: 750px;
+  width: 100%;
+  //   background-color: $light-backgound;s
+  background-color: #fff;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  svg {
+    transition: 0.3s;
+  }
+  &:hover {
+    svg {
+      transform: rotate(360deg);
+    }
+  }
+  cursor: pointer;
+}
+
+.blur {
+  position: absolute;
+  z-index: 1000;
+  height: 120vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.25);
+}
+.day {
+  .day_temp {
+    font-weight: 500;
+    font-size: 60px;
+    color: $primary-color;
+    margin-bottom: 12px;
+  }
+  .day_name {
+    font-size: 25px;
+    line-height: 30px;
+    color: #000;
+    margin-bottom: 12px;
+  }
+  .img {
+    svg {
+      width: 53px;
+      height: 53px;
+      margin-bottom: 12px;
+    }
+  }
+  .day_time {
+    font-size: 15px;
+    color: $base-color;
+  }
+  .day_city {
+    font-size: 15px;
+    color: $base-color;
+  }
+}
