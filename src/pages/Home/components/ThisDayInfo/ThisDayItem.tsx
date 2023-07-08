@@ -3,12 +3,15 @@ import style from "./ThisDayInfo.module.scss";
 
 import { IndicatorSvgSelector } from "../../../../assets/icons/indicator/IndicatorSvgSelector";
 import { Item } from "./ThisDayInfo";
+import { useSelector } from "react-redux";
+import { WeatherState } from "../../../../store/WeatherReducer";
 
 interface Props {
   item: Item;
 }
 
 const ThisDayItem = ({ item }: Props) => {
+  const current = useSelector((state: WeatherState) => state.weather.weather);
   const { icon_id, value, name } = item;
   return (
     <div className={style.item}>
@@ -16,7 +19,7 @@ const ThisDayItem = ({ item }: Props) => {
         <IndicatorSvgSelector id={icon_id} />
       </div>
       <div className={style.indicator_name}>{name}</div>
-      <div className={style.indicator_value}>{value}</div>
+      <div className={style.indicator_value}>{value} </div>
     </div>
   );
 };

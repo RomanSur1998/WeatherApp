@@ -9,7 +9,8 @@ import { useSelector } from "react-redux";
 import { CHANGE_CITY, LocationState } from "../../store/LoactionReducer";
 import { useDispatch } from "react-redux";
 import { ActionMeta } from "react-select";
-
+import { getLoaction } from "../../store/Function/GetLoaction";
+import { getWeather } from "../../store/Function/GetWeather";
 type Props = {};
 
 const Header = (props: Props) => {
@@ -45,6 +46,8 @@ const Header = (props: Props) => {
   //* функция для изменения значения города
   function handleChangeCity(cityname: string) {
     dispatch({ type: CHANGE_CITY, payload: cityname });
+    // getLoaction(cityname, dispatch);
+    getWeather(dispatch, cityname);
   }
 
   const changeTheme = () => {

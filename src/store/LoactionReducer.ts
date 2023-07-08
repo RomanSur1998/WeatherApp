@@ -27,3 +27,8 @@ export const LoactionReducer = (state = defultState, action: Loaction) => {
       return state;
   }
 };
+
+export const getLoacionState = (payload: any) => ({
+  type: GET_LOACTION,
+  payload: payload,
+});

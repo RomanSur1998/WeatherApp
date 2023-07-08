@@ -2,6 +2,8 @@ import React from "react";
 import style from "./ThisDayInfo.module.scss";
 import cloud from "../../../../assets/images/Cloud image.png";
 import ThisDayItem from "./ThisDayItem";
+import { useSelector } from "react-redux";
+import { WeatherState } from "../../../../store/WeatherReducer";
 
 type Props = {};
 export interface Item {
@@ -11,6 +13,7 @@ export interface Item {
 }
 
 const ThisDayInfo = (props: Props) => {
+  const current = useSelector((state: WeatherState) => state.weather.weather);
   const items = [
     {
       icon_id: "temp",
