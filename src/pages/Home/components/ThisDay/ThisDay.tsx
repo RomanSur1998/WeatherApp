@@ -22,7 +22,7 @@ const ThisDay = (props: Props) => {
             <div className={styles.this_temp}>20 &#176;</div>
           )}
 
-          <div className={styles.this_day_name}>Today </div>
+          <div className={styles.this_day_name}> Today</div>
         </div>
         <GlobalSvgselector
           id={`${

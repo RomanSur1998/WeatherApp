@@ -9,7 +9,7 @@ export interface Tab {
 const Tabs = (props: Props) => {
   const tabs: Tab[] = [
     {
-      value: "На неделю",
+      value: "Week",
     },
     // {
     //   value: "На 10 дней",

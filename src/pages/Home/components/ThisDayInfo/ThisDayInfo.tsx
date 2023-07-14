@@ -19,29 +19,29 @@ const ThisDayInfo = (props: Props) => {
   const items = [
     {
       icon_id: "temp",
-      name: "Температура",
+      name: "Temperature",
       value: `${
         current && current.current && current.current.temp_c
-      } Ощущаеться как ${
+      } Feels like ${
         current && current.current && current.current.feelslike_c
       }`,
     },
     {
       icon_id: "pressure",
-      name: "Давление",
+      name: "Pressure",
       value: `${
         current && current.current && current.current.pressure_mb * 0.75
-      } mm Ртутного столба`,
+      } mm Mercury column`,
     },
     {
       icon_id: "precipitation",
-      name: "Осадки",
+      name: "Precipitation",
       value: `${current && current.current && current.current.precip_mm} mm`,
     },
     {
       icon_id: "wind",
-      name: "Ветер",
-      value: `${current && current.current && current.current.wind_kph} км/ч ${
+      name: "Wind",
+      value: `${current && current.current && current.current.wind_kph} km/h ${
         current && current.current && current.current.wind_dir
       }`,
     },
