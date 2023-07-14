@@ -14,26 +14,36 @@ export interface Item {
 
 const ThisDayInfo = (props: Props) => {
   const current = useSelector((state: WeatherState) => state.weather.weather);
+  console.log("ccurrent", current);
+
   const items = [
     {
       icon_id: "temp",
       name: "Температура",
-      value: "20° - ощущается как 17°",
+      value: `${
+        current && current.current && current.current.temp_c
+      } Ощущаеться как ${
+        current && current.current && current.current.feelslike_c
+      }`,
     },
     {
       icon_id: "pressure",
       name: "Давление",
-      value: "765 мм ртутного столба - нормальное",
+      value: `${
+        current && current.current && current.current.pressure_mb * 0.75
+      } mm Ртутного столба`,
     },
     {
       icon_id: "precipitation",
       name: "Осадки",
-      value: "Без осадков",
+      value: `${current && current.current && current.current.precip_mm} mm`,
     },
     {
       icon_id: "wind",
       name: "Ветер",
-      value: "3 м/с юго-запад - легкий ветер",
+      value: `${current && current.current && current.current.wind_kph} км/ч ${
+        current && current.current && current.current.wind_dir
+      }`,
     },
   ];
   return (

@@ -11,12 +11,12 @@ const Tabs = (props: Props) => {
     {
       value: "На неделю",
     },
-    {
-      value: "На 10 дней",
-    },
-    {
-      value: "На месяц",
-    },
+    // {
+    //   value: "На 10 дней",
+    // },
+    // {
+    //   value: "На месяц",
+    // },
   ];
   return (
     <div className={styles.tabs}>
@@ -27,7 +27,7 @@ const Tabs = (props: Props) => {
           </div>
         ))}
       </div>
-      <div className={styles.cancel}>Отменить</div>
+      {/* <div className={styles.cancel}>Отменить</div> */}
     </div>
   );
 };

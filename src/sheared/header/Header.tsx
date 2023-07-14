@@ -20,10 +20,10 @@ const Header = (props: Props) => {
   const dispatch = useDispatch();
   const theme = useTheme();
   const options = [
+    { value: "Bishkek", label: "Bishkek" },
     { value: "Moscow", label: "Moscow" },
     { value: "Rome", label: "Rome" },
     { value: "London", label: "London" },
-    { value: "Bishkek", label: "Bishkek" },
   ];
 
   const colorStyles = {

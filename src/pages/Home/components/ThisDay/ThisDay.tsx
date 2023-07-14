@@ -24,7 +24,11 @@ const ThisDay = (props: Props) => {
 
           <div className={styles.this_day_name}>Today </div>
         </div>
-        <GlobalSvgselector id="sun" />
+        <GlobalSvgselector
+          id={`${
+            current && current.location && current.current.condition.text
+          }`}
+        />
       </div>
       <div className={styles.bottom_block}>
         <div className={styles.this_time}>

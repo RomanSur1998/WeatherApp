@@ -11,7 +11,6 @@ interface Props {
 }
 
 const ThisDayItem = ({ item }: Props) => {
-  const current = useSelector((state: WeatherState) => state.weather.weather);
   const { icon_id, value, name } = item;
   return (
     <div className={style.item}>
