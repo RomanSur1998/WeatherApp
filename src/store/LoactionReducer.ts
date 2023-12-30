@@ -2,6 +2,7 @@ const defultState = {
   location: {},
   city: "Bishkek",
 };
+7;
 
 export interface LocationState {
   location: any;

@@ -12,6 +12,28 @@ export interface Item {
   value: string;
 }
 
+function getWind(name: string): string {
+  const wind: { [key: string]: string } = {
+    N: "Север ",
+    NNE: "Северо-Северо-Восток ",
+    NE: "Северо-Восток ",
+    ENE: "Востоко-Северо-Восток ",
+    E: "Восток ",
+    ESE: "Востоко-Юго-Восток",
+    SE: "Юго-Восток ",
+    SSE: "Юго-Юго-Восток ",
+    S: "Юг ",
+    SSW: "Юго-Юго-Запад ",
+    SW: "Юго-Запад ",
+    WSW: "Западо-Юго-Запад ",
+    W: "Запад",
+    WNW: "Западо-Северо-Запад ",
+    NW: "Северо-Запад",
+    NNW: "Северо-Северо-Запад ",
+  };
+
+  return wind[name];
+}
 const ThisDayInfo = (props: Props) => {
   const current = useSelector((state: WeatherState) => state.weather.weather);
   console.log("ccurrent", current);
@@ -42,7 +64,9 @@ const ThisDayInfo = (props: Props) => {
       icon_id: "wind",
       name: "Wind",
       value: `${current && current.current && current.current.wind_kph} km/h ${
-        current && current.current && current.current.wind_dir
+        current &&
+        current.current &&
+        `Направление ветра:  ${getWind(current.current.wind_dir)}`
       }`,
     },
   ];

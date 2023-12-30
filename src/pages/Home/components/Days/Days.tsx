@@ -8,11 +8,11 @@ import { WeatherState } from "../../../../store/WeatherReducer";
 type Props = {};
 
 export interface Day_weather {
-  astro: any;
+  astro: string;
   date: string;
   date_epoch: number;
   day: any;
-  hour: any;
+  hour: number;
 }
 
 const Days = (props: Props) => {

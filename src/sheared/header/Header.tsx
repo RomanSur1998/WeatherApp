@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import styles from "./Header.module.scss";
 import GlobalSvgselector from "../../assets/icons/global/GlobalSvgselector";
 import Select from "react-select";
@@ -44,11 +44,13 @@ const Header = (props: Props) => {
   };
 
   //* функция для изменения значения города
-  function handleChangeCity(cityname: string) {
-    dispatch({ type: CHANGE_CITY, payload: cityname });
-    // getLoaction(cityname, dispatch);
-    getWeather(dispatch, cityname);
-  }
+  const handleChangeCity = useMemo(() => {
+    return (cityname: string) => {
+      dispatch({ type: CHANGE_CITY, payload: cityname });
+      // getLoaction(cityname, dispatch);
+      getWeather(dispatch, cityname);
+    };
+  }, [dispatch]);
 
   const changeTheme = () => {
     const newTheme = theme.theme === "light" ? "dark" : "light";
@@ -75,6 +77,12 @@ const Header = (props: Props) => {
             handleChangeCity(selectedOption.value);
           }}
         />
+        {/* <input
+          type="text"
+          onChange={(e) => {
+            handleChangeCity(e.target.value);
+          }}
+        /> */}
       </div>
     </header>
   );
